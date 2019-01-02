@@ -1,0 +1,44 @@
+
+V=[33,4,3,47,-3,-4,-4,-6,-3]
+
+N=length(V)
+podzial=N-(N-1)
+
+LV=V(1:podzial)
+PV=V(podzial+1:N)
+
+MIN=1
+MAX=1
+
+
+while podzial<=N+1 do
+    podzial=podzial+1
+    LV=V(1:podzial-1)
+    
+    PV=V(podzial:N)
+    
+    
+    for k=1:length(LV) do
+        if LV(k)<LV(MIN) then
+        MIN=k
+        end
+    end
+    for i=1:length(PV) do
+        if PV(i)>PV(MAX) then
+        MAX=i
+    end
+    end
+    
+        if PV(MAX)==LV(MIN) then
+         disp(podzial-1)
+         break
+        end
+     if podzial==N+1 then
+         disp(-1)
+         break
+      end
+      
+    
+      
+end
+   
