@@ -1,0 +1,42 @@
+function x = podzialTablicy(V)
+
+N=length(V);
+podzial=N-(N-1);
+
+LV=V(1:podzial);
+PV=V(podzial+1:N);
+
+
+
+
+while podzial<=N+1 
+    podzial=podzial+1;
+    if podzial==N+1 
+         x = -1;
+         break
+     end
+    LV=V(1:podzial-1);
+    
+    PV=V(podzial:N);
+    MIN=1;
+    MAX=1;
+    
+    for k=1:length(LV) 
+        if LV(k)<LV(MIN) 
+            MIN=k;
+        end
+    end
+    for i=1:length(PV)
+
+        if PV(i)>PV(MAX) 
+            MAX=i;
+        end
+    end
+    
+    if PV(MAX)==LV(MIN) 
+        x = podzial - 1;
+        break
+     end
+     
+      
+end
